@@ -22,7 +22,7 @@ export async function fetchOpenGraphServer(
     timeout = 10000,
     retries = 3,
     retryDelay = 1000,
-    userAgent = "ReacherXBot/1.0 (+https://reacherx.com)",
+    userAgent = "DiscoveryBot/1.0 (+https://reacherx.com)",
     cache = true,
   } = options;
 

@@ -96,7 +96,7 @@ export function WaitlistForm({
                     <FormControl>
                       <Input
                         id="twitter"
-                        placeholder="e.g., ReacherXfounder"
+                        placeholder="e.g., Discoveryfounder"
                         aria-required="false"
                         {...field}
                       />

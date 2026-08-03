@@ -12,7 +12,6 @@ import {
 import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui/components/Button";
 import { LandingWordmark } from "@/features/landing/ui/components/LandingWordmark";
-import { VecterAILogo } from "@/features/landing/ui/components/VecterAILogo";
 import {
   Select,
   SelectContent,
@@ -71,7 +70,7 @@ const FOOTER_COLUMNS = [
 
 const SOCIALS = [
   {
-    href: "https://x.com/ReacherXfounder",
+    href: "https://x.com/Discoveryfounder",
     label: "X/Twitter",
     icon: <TwitterIcon />,
   },
@@ -236,7 +235,7 @@ export function FooterClient({
                   rel="noopener noreferrer"
                 >
                   <Button
-                    aria-label={`ReacherX on ${label}`}
+                    aria-label={`Discovery on ${label}`}
                     variant="ghost"
                     size="icon"
                     className="[&_svg]:size-5"
@@ -262,7 +261,7 @@ export function FooterClient({
                 rel="noopener noreferrer"
               >
                 <Button
-                  aria-label={`ReacherX on ${label}`}
+                  aria-label={`Discovery on ${label}`}
                   variant="ghost"
                   size="icon"
                   className="[&_svg]:size-5"
@@ -316,7 +315,7 @@ export function FooterClient({
 
         <div className="flex flex-col-reverse gap-2 md:flex-row md:items-center md:justify-between">
           <small className="text-muted-foreground text-sm">
-            Copyright &copy; {currentYear} ReacherX. All rights reserved.
+            Copyright &copy; {currentYear} Discovery. All rights reserved.
           </small>
           <div className="flex items-center gap-2">
             <Link
@@ -334,8 +333,7 @@ export function FooterClient({
             </Link>
           </div>
         </div>
-
-        <VecterAILogo className="text-foreground" />
+        {/* vendor mark removed */}
       </div>
     </footer>
   );

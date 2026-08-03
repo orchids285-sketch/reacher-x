@@ -43,7 +43,7 @@ export interface ProspectInteraction {
   threadId: string;
   /** When the user's reply was posted */
   repliedAt: number;
-  /** Provenance when ReacherX can determine it */
+  /** Provenance when Discovery can determine it */
   origin: TwitterInteractionOrigin;
   discoveredVia: TwitterInteractionDiscoverySource;
   status?: TwitterInteractionStatus;

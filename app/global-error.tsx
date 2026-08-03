@@ -26,14 +26,14 @@ export default function GlobalError({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${geistPixelSquare.variable} bg-background text-foreground antialiased`}
       >
-        <title>Something went wrong | ReacherX</title>
+        <title>Something went wrong | Discovery</title>
         <main className="flex min-h-screen items-center justify-center p-6">
           <div className="bg-background w-full max-w-xl rounded-2xl border p-6 shadow-sm">
             <p className="text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase">
               Global error
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">
-              ReacherX ran into an unexpected failure.
+              Discovery ran into an unexpected failure.
             </h1>
             <p className="text-muted-foreground mt-3 text-sm leading-6">
               Try reloading the app. If the error persists, return to the

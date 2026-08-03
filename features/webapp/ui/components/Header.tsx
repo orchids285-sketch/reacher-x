@@ -431,7 +431,7 @@ export function Header({
         <div className="flex items-center">
           <Link
             href="/"
-            aria-label="ReacherX Home"
+            aria-label="Discovery Home"
             className={cn(brandLinkVariants())}
           >
             🆁
@@ -467,7 +467,7 @@ export function Header({
       <div className="flex items-center">
         <Link
           href="/"
-          aria-label="ReacherX Home"
+          aria-label="Discovery Home"
           className={cn(brandLinkVariants())}
         >
           🆁
@@ -985,11 +985,8 @@ export function Header({
                   </Link>
                 </DropdownMenuItem>
 
-                {/* Log out */}
-                <DropdownMenuItem onClick={() => router.push("/logout")}>
-                  <LogoutIcon className="fill-current" aria-hidden="true" />
-                  Log out
-                </DropdownMenuItem>
+                {/* No log out. The session belongs to the host application: the
+                    user never created it and there is nowhere to return to. */}
               </DropdownMenuContent>
             </DropdownMenu>
           </li>

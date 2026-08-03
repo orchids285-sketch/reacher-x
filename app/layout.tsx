@@ -28,20 +28,8 @@ export const metadata: Metadata = {
   metadataBase,
   title: APP_NAME,
   description: APP_DESCRIPTION,
-  icons: {
-    icon: [
-      {
-        url: "/favicon-light.png?v=2",
-        media: "(prefers-color-scheme: light)",
-        type: "image/png",
-      },
-      {
-        url: "/favicon-dark.png?v=2",
-        media: "(prefers-color-scheme: dark)",
-        type: "image/png",
-      },
-    ],
-  },
+  // No icons declared. The files were removed with the rest of the branding, and
+  // declaring them anyway is two 404s on every page load.
 };
 
 /** Keep STORAGE_KEY in sync with `WORKSPACE_USE_CASE_STORAGE_KEY` in workspaceUseCaseCache.ts */

@@ -13,7 +13,7 @@ import {
   WORKSPACE_USE_CASE_STORAGE_KEY,
 } from "@/shared/lib/workspaceUseCaseCache";
 
-export const APP_NAME = "🆁 ReacherX";
+export const APP_NAME = "Discovery";
 export const APP_DESCRIPTION =
   "Open-source, self-improving △ Agent that finds the people you need in real time.";
 

@@ -19,7 +19,7 @@ export function RelationshipLayerSection() {
             An early relationship layer inside Agent.
           </h3>
           <p className="mt-3 text-base">
-            ReacherX already gives Agent a lightweight way to manage what
+            Discovery already gives Agent a lightweight way to manage what
             happens after discovery begins. People move through stages through a
             mix of Agent activity and manual updates from you. Over time, Agent
             will go further by handling follow-ups, managing progress, and

@@ -42,7 +42,7 @@ export const WaitlistConfirmationEmail = () => {
               href="https://reacherx.com"
               className="tracking-custom font-mono font-medium text-black"
             >
-              🆁 ReacherX
+              Discovery
             </Link>
           </Container>
 
@@ -51,10 +51,10 @@ export const WaitlistConfirmationEmail = () => {
               You&apos;re on the wait-list!
             </Heading>
             <Text className="mt-4 text-[1rem] leading-[150%]">
-              You&apos;re officially on the ReacherX wait-list!
+              You&apos;re officially on the Discovery wait-list!
             </Text>
             <Text className="mt-2 text-[1rem] leading-[150%]">
-              I’m Salman, and I’m building ReacherX.
+              I’m Salman, and I’m building Discovery.
             </Text>
             <Text className="mt-2 text-[1rem] leading-[150%]">
               Here are a few things you can do in the meantime:
@@ -72,7 +72,7 @@ export const WaitlistConfirmationEmail = () => {
               </li>
               <li className="mt-4">
                 <strong>Read my threads:</strong> I’ve been writing about
-                ReacherX and why I think it’s important. ⇾{" "}
+                Discovery and why I think it’s important. ⇾{" "}
                 <Link
                   href="/threads"
                   className="tracking-custom font-mono text-[1rem] leading-[150%] text-neutral-500 underline underline-offset-4"
@@ -98,7 +98,7 @@ export const WaitlistConfirmationEmail = () => {
               href="https://reacherx.com"
               className="tracking-custom mb-1 block font-mono font-medium text-black"
             >
-              🆁 ReacherX
+              Discovery
             </Link>
             <Text className="m-0">
               <Link
@@ -110,8 +110,8 @@ export const WaitlistConfirmationEmail = () => {
             </Text>
             <Section className="mt-6">
               <Link
-                href="https://x.com/ReacherXfounder"
-                aria-label="ReacherX on X (formerly Twitter)"
+                href="https://x.com/Discoveryfounder"
+                aria-label="Discovery on X (formerly Twitter)"
               >
                 <svg
                   width="32"
@@ -130,7 +130,7 @@ export const WaitlistConfirmationEmail = () => {
               </Link>
               <Link
                 href="https://discord.gg/APWe9Fvn"
-                aria-label="ReacherX on Discord"
+                aria-label="Discovery on Discord"
               >
                 <svg
                   width="32"
@@ -149,7 +149,7 @@ export const WaitlistConfirmationEmail = () => {
               </Link>
               <Link
                 href="https://threads.net/@reacherxfounder"
-                aria-label="ReacherX on Threads"
+                aria-label="Discovery on Threads"
               >
                 <svg
                   width="32"
@@ -168,7 +168,7 @@ export const WaitlistConfirmationEmail = () => {
               </Link>
               <Link
                 href="https://instagram.com/reacherxfounder/"
-                aria-label="ReacherX on Instagram"
+                aria-label="Discovery on Instagram"
               >
                 <svg
                   width="32"
@@ -212,7 +212,7 @@ export const WaitlistConfirmationEmail = () => {
                 href="https://reacherx.com"
                 className="tracking-custom mt-6 inline-block font-mono text-neutral-900"
               >
-                🆁 ReacherX
+                Discovery
               </Link>
               &nbsp;.&nbsp;&nbsp;All rights reserved.
             </Text>

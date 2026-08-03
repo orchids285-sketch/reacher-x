@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: "Use Cases",
     description:
       "One agent that adapts to who you need. Customers, candidates, investors, partners, and more.",
-    images: ["/og-default.jpg"],
     url: "https://reacherx.com/use-cases",
     type: "website",
   },
@@ -18,7 +17,6 @@ export const metadata: Metadata = {
     title: "Use Cases",
     description:
       "One agent that adapts to who you need. Customers, candidates, investors, partners, and more.",
-    images: ["/og-default.jpg"],
   },
 };
 

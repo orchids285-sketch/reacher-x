@@ -7,55 +7,55 @@ export type FaqItem = {
 export const homepageFaqItems: FaqItem[] = [
   {
     id: "what-is-reacherx",
-    question: "What is ReacherX?",
+    question: "What is Discovery?",
     answer:
-      "ReacherX is an open-source Agent that helps you reach the right people on X/Twitter and LinkedIn.",
+      "Discovery is an open-source Agent that helps you reach the right people on X/Twitter and LinkedIn.",
   },
   {
     id: "why-agent",
-    question: "Why do you call ReacherX an Agent?",
+    question: "Why do you call Discovery an Agent?",
     answer:
       "Because it does more than search. It keeps running in the background, qualifies people, reads context, drafts outreach, and improves from your feedback.",
   },
   {
     id: "how-does-it-know",
-    question: "How does ReacherX know who to reach?",
+    question: "How does Discovery know who to reach?",
     answer:
       "You tell Agent who you want to reach in plain English, or give it a URL. It turns that into search strategies, watches for real signals, and qualifies people based on fit and context.",
   },
   {
     id: "platform-support",
-    question: "Which platforms does ReacherX support?",
+    question: "Which platforms does Discovery support?",
     answer:
-      "Today, ReacherX supports X/Twitter and LinkedIn. More platforms are on the roadmap.",
+      "Today, Discovery supports X/Twitter and LinkedIn. More platforms are on the roadmap.",
   },
   {
     id: "account-safety",
     question: "Will connecting my social accounts get me banned?",
     answer:
-      "No. Connecting your accounts alone will not get them banned. ReacherX is designed for personalized, human-paced outreach, but if you use it to spam people, blast generic messages, or force unnatural volume, your accounts can still be at risk.",
+      "No. Connecting your accounts alone will not get them banned. Discovery is designed for personalized, human-paced outreach, but if you use it to spam people, blast generic messages, or force unnatural volume, your accounts can still be at risk.",
   },
   {
     id: "runs-24-7",
-    question: "Does ReacherX really run 24/7?",
+    question: "Does Discovery really run 24/7?",
     answer:
       "Yes. Agent keeps searching, qualifying, and surfacing new people in the background.",
   },
   {
     id: "approval",
-    question: "Does ReacherX send anything without approval?",
+    question: "Does Discovery send anything without approval?",
     answer:
       "No. Replies, DMs, invites, and other actions stay under your control. Nothing sends without your approval.",
   },
   {
     id: "different-from-other-tools",
-    question: "How is ReacherX different from other outreach tools?",
+    question: "How is Discovery different from other outreach tools?",
     answer:
-      "Most tools help you build lists or automate sequences. ReacherX is an open-source Agent that works from live social context, learns over time, and helps you reach the right people with more relevance.",
+      "Most tools help you build lists or automate sequences. Discovery is an open-source Agent that works from live social context, learns over time, and helps you reach the right people with more relevance.",
   },
   {
     id: "open-source",
-    question: "Is ReacherX open source?",
+    question: "Is Discovery open source?",
     answer:
       "Yes. The code is public, and you can inspect it, self-host it, and contribute to it.",
   },
@@ -77,7 +77,7 @@ export const pricingFaqItems: FaqItem[] = [
     id: "plan-limits",
     question: "What do plan limits actually control?",
     answer:
-      "Plans mainly control how many qualified people ReacherX can surface each month, plus workspace limits and a few extra features.",
+      "Plans mainly control how many qualified people Discovery can surface each month, plus workspace limits and a few extra features.",
   },
   {
     id: "hit-limit",

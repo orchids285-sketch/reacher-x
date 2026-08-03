@@ -14,7 +14,7 @@ import { WorkspaceTransitionProvider } from "@/features/webapp/contexts/Workspac
 import { APP_DESCRIPTION } from "@/shared/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "ReacherX",
+  title: "Discovery",
   description: APP_DESCRIPTION,
 };
 

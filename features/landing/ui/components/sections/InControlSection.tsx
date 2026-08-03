@@ -15,7 +15,7 @@ export function InControlSection() {
       <div className="space-y-16 md:space-y-24">
         <StepBlock
           heading="Do it yourself. Or delegate to Agent."
-          description="You can manually reply to people, send DMs, and engage with their posts all from inside ReacherX. Or ask Agent to generate an outreach plan, or give it a command and have it execute it on your behalf. Either way, nothing sends without your approval."
+          description="You can manually reply to people, send DMs, and engage with their posts all from inside Discovery. Or ask Agent to generate an outreach plan, or give it a command and have it execute it on your behalf. Either way, nothing sends without your approval."
           mockupAssetKey="landing-image-8"
           reversed={false}
         />

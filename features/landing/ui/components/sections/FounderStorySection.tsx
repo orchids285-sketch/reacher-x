@@ -17,7 +17,7 @@ export function FounderStorySection() {
         <div className="bg-muted relative aspect-square w-full overflow-hidden">
           <Image
             src="/landing/founder-story/founder-3.webp"
-            alt="Salman, Founder of ReacherX"
+            alt="Salman, Founder of Discovery"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
@@ -30,7 +30,7 @@ export function FounderStorySection() {
             Three years. One goal.
           </h3>
           <p className="text-base leading-relaxed">
-            I started ReacherX because finding the right people should not be
+            I started Discovery because finding the right people should not be
             this hard. Customers, candidates, investors, partners, creators,
             community members, or anyone else you need, they already exist
             somewhere on the internet. You should be able to say who you are
@@ -41,7 +41,7 @@ export function FounderStorySection() {
             still here, still building, still shipping.
           </p>
           <p className="text-base leading-relaxed">
-            ReacherX is open source because I believe developers are the ones
+            Discovery is open source because I believe developers are the ones
             who change how software works. This space has been locked inside
             closed systems and messy workflows for too long. It should become an
             open ecosystem where people build, share, improve, and push the
@@ -49,7 +49,7 @@ export function FounderStorySection() {
           </p>
           <footer className="pt-4">
             <p className="text-foreground font-medium">&mdash; Salman</p>
-            <p className="text-foreground text-sm">Founder, 🆁 ReacherX</p>
+            <p className="text-foreground text-sm">Founder, Discovery</p>
           </footer>
         </article>
       </div>

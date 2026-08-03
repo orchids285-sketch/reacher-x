@@ -302,7 +302,7 @@ export const UI_PREVIEW_INTERACTIONS: ProspectInteraction[] = [
     sourcePostData: UI_PREVIEW_LINKEDIN_POSTS[1],
     sourceUrl: UI_PREVIEW_LINKEDIN_POSTS[1].url,
     replyText:
-      "This is exactly the kind of gap ReacherX is designed to make visible. We map the full prospect journey so teams can spot where response quality breaks down before pipeline does.",
+      "This is exactly the kind of gap Discovery is designed to make visible. We map the full prospect journey so teams can spot where response quality breaks down before pipeline does.",
     participants: [
       {
         name: "Sarah Chen",
@@ -401,7 +401,7 @@ export const UI_PREVIEW_ACTIVITY: ProspectActivityPreviewRecord[] = [
         rationale:
           "Lead with Sarah's own language about workflow visibility so the outreach feels grounded in her current operating pain.",
         valueProposition:
-          "Show how ReacherX makes prospect context and conversation context line up in one workflow.",
+          "Show how Discovery makes prospect context and conversation context line up in one workflow.",
         tone: "Helpful, operator-to-operator",
       },
       tasks: [
@@ -668,7 +668,7 @@ export const UI_PREVIEW_LINKEDIN_THREAD_SCENARIOS: Record<
             author: {
               id: "preview_author_viewer",
               name: "You",
-              headline: "Founder @ ReacherX",
+              headline: "Founder @ Discovery",
               isViewer: true,
             },
             source: "preview",
@@ -697,7 +697,7 @@ export const UI_PREVIEW_LINKEDIN_THREAD_SCENARIOS: Record<
             author: {
               id: "preview_author_viewer",
               name: "You",
-              headline: "Founder @ ReacherX | Building AI agents through...",
+              headline: "Founder @ Discovery | Building AI agents through...",
               isViewer: true,
             },
             source: "optimistic",

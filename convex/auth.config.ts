@@ -1,7 +1,26 @@
 const clientId = process.env.WORKOS_CLIENT_ID;
 
+// The host application, when this runs embedded inside one. It signs identities with its
+// own key and publishes the public half, so Convex verifies them without ever asking it
+// anything. Unset means the list below is unchanged.
+const hostIssuer = process.env.HOST_JWT_ISSUER?.replace(/\/$/, "");
+const hostAudience = process.env.HOST_JWT_AUDIENCE ?? "reacherx";
+
+const hostProvider = hostIssuer
+  ? [
+      {
+        type: "customJwt" as const,
+        issuer: `${hostIssuer}/`,
+        algorithm: "RS256" as const,
+        jwks: `${hostIssuer}/.well-known/jwks.json`,
+        applicationID: hostAudience,
+      },
+    ]
+  : [];
+
 const authConfig = {
   providers: [
+    ...hostProvider,
     {
       type: "customJwt",
       issuer: `https://api.workos.com/`,

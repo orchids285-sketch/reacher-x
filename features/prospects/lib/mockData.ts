@@ -28,7 +28,7 @@ export const MOCK_PROSPECTS: Doc<"prospects">[] = [
     prospectType: "individual",
     qualificationScore: 95,
     qualificationStatus: "qualified",
-    company: "ReacherX",
+    company: "Discovery",
     websiteUrl: "https://reacherx.com",
     location: "SF, California, USA",
     pipelineStage: "contacted",
@@ -492,7 +492,7 @@ export const MOCK_INTERACTIONS: ProspectInteraction[] = [
     origin: "agent",
     discoveredVia: "outreach_task",
     lastReplyPreview:
-      "Have you tried ReacherX? It helps with customer acquisition for SaaS founders...",
+      "Have you tried Discovery? It helps with customer acquisition for SaaS founders...",
   },
   {
     id: "interaction_2",
@@ -613,7 +613,7 @@ export const MOCK_THREAD_TWEETS: Tweet[] = [
   {
     id_str: "thread_tweet_3",
     full_text:
-      "@sarahchen @AnotherSalman Totally agree! Building in public is underrated. Also, have you tried ReacherX? It helps find and engage with potential customers automatically.",
+      "@sarahchen @AnotherSalman Totally agree! Building in public is underrated. Also, have you tried Discovery? It helps find and engage with potential customers automatically.",
     tweet_created_at: new Date(
       getCurrentUTCTimestamp() - 9 * 60 * 60 * 1000
     ).toISOString(),

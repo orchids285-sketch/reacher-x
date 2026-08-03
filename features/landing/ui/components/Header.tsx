@@ -95,7 +95,6 @@ import { getWorkspaceRoutes } from "@/shared/lib/workspaceRoutes";
 import { buildSetupHref } from "@/shared/lib/urls/setupHref";
 import {
   LOGIN_HREF,
-  LOGOUT_HREF,
   SETUP_SIGN_UP_HREF,
 } from "@/shared/lib/urls/authRoutes";
 import { LandingAuthLink } from "./LandingAuthLink";
@@ -140,7 +139,7 @@ function GitHubButton({ starsCount }: { starsCount: number }) {
       href={GITHUB_REPO_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`View ReacherX on GitHub (${starsCount} stars)`}
+      aria-label={`View Discovery on GitHub (${starsCount} stars)`}
       className={cn(
         buttonVariants({ variant: "ghost", size: "xs" }),
         "gap-1.5"
@@ -746,13 +745,7 @@ function AvatarDropdown({
             </Link>
           </DropdownMenuItem>
 
-          {/* Log out */}
-          <DropdownMenuItem asChild>
-            <LandingAuthLink href={LOGOUT_HREF}>
-              <LogoutIcon className="fill-current" aria-hidden="true" />
-              Log out
-            </LandingAuthLink>
-          </DropdownMenuItem>
+          {/* No log out: see the webapp header. */}
         </DropdownMenuContent>
       </DropdownMenu>
       {modal}
@@ -946,7 +939,7 @@ export function Header({ githubStarsCount }: { githubStarsCount: number }) {
                 </small>
                 <div className="flex items-center">
                   <SocialLink
-                    href="https://x.com/ReacherXfounder"
+                    href="https://x.com/Discoveryfounder"
                     label="X/Twitter"
                   >
                     <TwitterIcon />
@@ -1001,7 +994,7 @@ function SocialLink({
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <Button
-        aria-label={`ReacherX on ${label}`}
+        aria-label={`Discovery on ${label}`}
         variant="ghost"
         size="icon"
         className="[&_svg]:size-8"

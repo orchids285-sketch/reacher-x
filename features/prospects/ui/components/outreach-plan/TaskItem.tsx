@@ -296,7 +296,7 @@ export function TaskItem({
 
           {isWaitingManual && (
             <p className="text-muted-foreground mt-1.5 text-xs">
-              Post this reply on X. ReacherX is watching automatically and will
+              Post this reply on X. Discovery is watching automatically and will
               continue when it appears.
             </p>
           )}

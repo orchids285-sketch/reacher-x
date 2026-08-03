@@ -34,7 +34,7 @@ export function XReplyFallbackAlert({
       <AlertTitle>Note</AlertTitle>
       <AlertDescription className="space-y-3">
         <p>
-          X/Twitter may block replies sent through 🆁 ReacherX. If that happens,
+          X/Twitter may block replies sent through Discovery. If that happens,
           you can reply directly on X/Twitter.
         </p>
         <div className="flex flex-wrap gap-2">

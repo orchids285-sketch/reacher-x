@@ -37,7 +37,7 @@ export function HeroSection() {
       <div className="mt-12 md:mt-16">
         <ThemedFigureVideo
           videoAssetKey="hero"
-          ariaLabel="ReacherX Agent dashboard demo"
+          ariaLabel="Discovery Agent dashboard demo"
           figureClassName="aspect-[335/216] w-full"
           className="h-full w-full"
           initialPreload="metadata"

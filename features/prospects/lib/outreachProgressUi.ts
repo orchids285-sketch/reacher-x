@@ -111,7 +111,7 @@ export function resolveOutreachProgressPresentation({
         return {
           label: withProgress("Manual reply needed"),
           title:
-            "Post the prepared reply on X; ReacherX is watching automatically",
+            "Post the prepared reply on X; Discovery is watching automatically",
           indicator: "warning",
           tone: "attention",
         };
@@ -120,7 +120,7 @@ export function resolveOutreachProgressPresentation({
         return {
           label: withProgress("Connection requested"),
           title:
-            "ReacherX will send the approved DM automatically after acceptance",
+            "Discovery will send the approved DM automatically after acceptance",
           indicator: "none",
           tone: "active",
         };

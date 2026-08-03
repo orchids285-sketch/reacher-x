@@ -27,7 +27,7 @@ const CARDS = [
   {
     title: "Self-host it",
     description:
-      "Run ReacherX on your own infrastructure. Same product. Your data stays with you.",
+      "Run Discovery on your own infrastructure. Same product. Your data stays with you.",
     linkLabel: "See the setup",
     href: GITHUB_REPO_URL,
   },
@@ -41,7 +41,7 @@ const CARDS = [
   {
     title: "Join the community",
     description:
-      "Ask questions, swap playbooks, and help shape what ReacherX ships next.",
+      "Ask questions, swap playbooks, and help shape what Discovery ships next.",
     linkLabel: "Join Discord",
     href: DISCORD_SERVER_URL,
   },

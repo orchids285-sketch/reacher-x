@@ -12,19 +12,17 @@ import type { Thread } from "@/features/threads/types";
 
 export const metadata = {
   title: "Threads",
-  description: "Browse recent threads to stay updated on ReacherX.",
+  description: "Browse recent threads to stay updated on Discovery.",
   openGraph: {
-    title: "🆁 | Threads",
-    description: "Browse recent threads to stay updated on ReacherX.",
-    images: ["/og-default.jpg"],
+    title: "| Threads",
+    description: "Browse recent threads to stay updated on Discovery.",
     url: "https://reacherx.com/threads",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "🆁 | Threads",
-    description: "Browse recent threads to stay updated on ReacherX.",
-    images: ["/og-default.jpg"],
+    title: "| Threads",
+    description: "Browse recent threads to stay updated on Discovery.",
   },
 };
 

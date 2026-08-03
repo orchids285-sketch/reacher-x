@@ -854,7 +854,7 @@ export function LinkedInProfilePanel({
     if (connectionState === "connected") {
       toast.message("LinkedIn connection already synced", {
         description:
-          "This profile is already connected. Removing first-degree LinkedIn connections is not supported from ReacherX yet.",
+          "This profile is already connected. Removing first-degree LinkedIn connections is not supported from Discovery yet.",
       });
       return;
     }
