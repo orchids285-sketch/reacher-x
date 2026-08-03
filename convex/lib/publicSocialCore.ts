@@ -13,7 +13,9 @@ import {
 import { fetchSocialApi } from "./socialApiFetch";
 import { mapSocialApiTweet } from "./socialApiTwitterMap";
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 
 const publicSocialLogger = logger.withScope("publicSocial");
 

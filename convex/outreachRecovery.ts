@@ -27,7 +27,9 @@ import {
   serializeRecoveryArtifactIds,
 } from "./lib/outreachRecoveryCore";
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 const TWITTER_MANUAL_DETECTION_WINDOW_MS = 48 * 60 * 60 * 1000;
 const RESPONSE_MONITOR_WINDOW_MS = 14 * 24 * 60 * 60 * 1000;
 const LINKEDIN_CONNECTION_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;

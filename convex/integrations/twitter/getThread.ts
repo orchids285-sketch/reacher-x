@@ -3,6 +3,7 @@
 // convex/integrations/twitter/getThread.ts
 // Fetch Twitter thread/conversation via SocialAPI
 
+import { SOCIAL_API_BASE } from "./base";
 import { action, internalAction } from "../../lib/functionBuilders";
 import { v } from "convex/values";
 import { internal } from "../../_generated/api";
@@ -73,7 +74,7 @@ export const getThread = internalAction({
 
     try {
       const url = new URL(
-        `https://api.socialapi.me/twitter/thread/${args.threadId}`
+        `${SOCIAL_API_BASE}/twitter/thread/${args.threadId}`
       );
       if (args.cursor) {
         url.searchParams.set("cursor", args.cursor);

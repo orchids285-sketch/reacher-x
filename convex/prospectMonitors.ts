@@ -19,7 +19,9 @@ import { logger } from "../shared/lib/logger";
 // Constants
 // ============================================================================
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 // Default monitor expiration: 7 days
 const DEFAULT_MONITOR_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const prospectMonitorLogger = logger.withScope("ProspectMonitors");

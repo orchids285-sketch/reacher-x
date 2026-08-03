@@ -28,7 +28,9 @@ import { formatQualifiedProspectLimitReachedMessage } from "./lib/prospectingHel
 // Constants
 // ============================================================================
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 const DEFAULT_REFRESH_FREQUENCY = 3600; // 1 hour in seconds (SocialAPI max)
 const DISCOVERY_MONITOR_RETIREMENT_BATCH_SIZE = 25;
 const DISCOVERY_MONITOR_RETIREMENT_DELAY_MS = 60_000;

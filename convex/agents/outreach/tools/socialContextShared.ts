@@ -716,7 +716,7 @@ async function fetchSocialApiJson(
     throw new Error("SOCIALAPI_API_KEY is not set");
   }
 
-  const url = `https://api.socialapi.me${path}${params ? `?${params.toString()}` : ""}`;
+  const url = `${process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") || "https://api.socialapi.me"}${path}${params ? `?${params.toString()}` : ""}`;
   const response = await fetchSocialApi(ctx as any, consumer, url, {
     headers: {
       Authorization: `Bearer ${apiKey}`,

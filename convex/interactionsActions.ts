@@ -15,7 +15,9 @@ import { resolveProspectTwitterIdentity } from "../shared/lib/twitter/prospectTw
 import { getCurrentUTCTimestamp } from "../shared/lib/utils/time/timeUtils";
 import { getXConnectionStatusForUser } from "./lib/xdkAuth";
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 const INTERACTION_REFRESH_COOLDOWN_MS = 60_000;
 
 type SocialApiSearchResponse = {

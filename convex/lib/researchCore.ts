@@ -26,13 +26,18 @@ let exaClient: Exa | null = null;
 
 function getExaClient(): Exa {
   if (!exaClient) {
-    const apiKey = process.env.EXA_API_KEY?.trim();
+    // A replacement may authenticate with a shared token instead, so a key is only
+    // strictly required when talking to the original service.
+    const apiKey = process.env.EXA_API_KEY?.trim() || process.env.FR_SHIM_TOKEN?.trim();
     if (!apiKey) {
       throw new Error(
         "EXA_API_KEY is not configured. Set it via `npx convex env set`."
       );
     }
-    exaClient = new Exa(apiKey);
+    // A base url so this can speak to a replacement that answers in the same shape.
+    // Unset means the original service, unchanged.
+    const baseUrl = process.env.EXA_BASE_URL?.trim().replace(/\/$/, "");
+    exaClient = baseUrl ? new Exa(apiKey, baseUrl) : new Exa(apiKey);
   }
   return exaClient;
 }

@@ -33,7 +33,9 @@ import {
 } from "./validators";
 
 const MAX_SOCIALAPI_HYDRATE_IDS = 10;
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 
 class SocialApiRequestError extends Error {
   status: number;
@@ -684,7 +686,7 @@ export const verifyUserRetweetedPost = action({
     const response = await fetchSocialApi(
       ctx,
       "socialapi.verifyUserRetweeted",
-      `https://api.socialapi.me/twitter/tweets/${tweetId}/retweeted_by/${xUserId}`,
+      `${SOCIALAPI_BASE_URL}/twitter/tweets/${tweetId}/retweeted_by/${xUserId}`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
@@ -720,7 +722,7 @@ export const verifyUserCommentedOnPost = action({
     const response = await fetchSocialApi(
       ctx,
       "socialapi.verifyUserCommented",
-      `https://api.socialapi.me/twitter/tweets/${tweetId}/commented_by/${xUserId}`,
+      `${SOCIALAPI_BASE_URL}/twitter/tweets/${tweetId}/commented_by/${xUserId}`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
@@ -756,7 +758,7 @@ export const verifyUserIsFollowing = action({
     const response = await fetchSocialApi(
       ctx,
       "socialapi.verifyUserFollowing",
-      `https://api.socialapi.me/twitter/user/${xUserId}/following/${targetUserId}`,
+      `${SOCIALAPI_BASE_URL}/twitter/user/${xUserId}/following/${targetUserId}`,
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,

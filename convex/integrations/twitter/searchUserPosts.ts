@@ -3,6 +3,7 @@
 // convex/integrations/twitter/searchUserPosts.ts
 // Search for a user's posts containing specific keywords for qualification evidence
 
+import { SOCIAL_API_BASE } from "./base";
 import { action, internalAction } from "../../lib/functionBuilders";
 import { v } from "convex/values";
 import { internal } from "../../_generated/api";
@@ -163,7 +164,7 @@ async function fetchSearchPage(
       params.set("cursor", args.cursor);
     }
 
-    const url = `https://api.socialapi.me/twitter/search?${params.toString()}`;
+    const url = `${SOCIAL_API_BASE}/twitter/search?${params.toString()}`;
 
     try {
       const response = await fetchSocialApi(

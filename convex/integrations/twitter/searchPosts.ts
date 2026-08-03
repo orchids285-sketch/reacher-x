@@ -3,6 +3,7 @@
 // convex/integrations/twitter/searchPosts.ts
 // Twitter post search via socialapi.io with exact phrase matching and automatic retry
 
+import { SOCIAL_API_BASE } from "./base";
 import { action, internalAction } from "../../lib/functionBuilders";
 import { v } from "convex/values";
 import { internal } from "../../_generated/api";
@@ -203,7 +204,7 @@ export const searchInternal = internalAction({
       params.set("cursor", args.cursor);
     }
 
-    const url = `https://api.socialapi.me/twitter/search?${params.toString()}`;
+    const url = `${SOCIAL_API_BASE}/twitter/search?${params.toString()}`;
 
     const response = await fetchSocialApi(
       ctx,

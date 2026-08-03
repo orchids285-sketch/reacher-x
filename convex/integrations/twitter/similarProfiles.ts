@@ -1,5 +1,6 @@
 "use node";
 
+import { SOCIAL_API_BASE } from "./base";
 import { action } from "../../lib/functionBuilders";
 import { v } from "convex/values";
 import { getCurrentUTCTimestamp } from "../../../shared/lib/utils/time/timeUtils";
@@ -124,7 +125,7 @@ export const getSimilarProfiles = action({
         params.set("cursor", args.cursor);
       }
       const queryString = params.toString();
-      const url = `https://api.socialapi.me/twitter/user/${encodeURIComponent(
+      const url = `${SOCIAL_API_BASE}/twitter/user/${encodeURIComponent(
         userId
       )}/similar${queryString ? `?${queryString}` : ""}`;
 

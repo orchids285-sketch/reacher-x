@@ -23,7 +23,9 @@ import { logger } from "../shared/lib/logger";
 // Constants
 // ============================================================================
 
-const SOCIALAPI_BASE_URL = "https://api.socialapi.me";
+const SOCIALAPI_BASE_URL =
+  process.env.SOCIALAPI_BASE_URL?.replace(/\/$/, "") ||
+  "https://api.socialapi.me";
 /** Maximum backfill pages to fetch (each ~20 tweets). */
 const MAX_BACKFILL_PAGES = 3;
 const STYLE_ANALYSIS_PROMPT_VERSION = "style-distillation-v1";

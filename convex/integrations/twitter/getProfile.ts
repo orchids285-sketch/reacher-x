@@ -3,6 +3,7 @@
 // convex/integrations/twitter/getProfile.ts
 // Fetch Twitter user profile and extended bio via SocialAPI
 
+import { SOCIAL_API_BASE } from "./base";
 import { internalAction } from "../../lib/functionBuilders";
 import { v } from "convex/values";
 import { fetchSocialApi } from "../../lib/socialApiFetch";
@@ -115,7 +116,7 @@ export const getProfile = internalAction({
 
     try {
       // Fetch main profile
-      const profileUrl = `https://api.socialapi.me/twitter/user/${identifier}`;
+      const profileUrl = `${SOCIAL_API_BASE}/twitter/user/${identifier}`;
       const profileResponse = await fetchSocialApi(
         ctx,
         "twitter.getProfile.profile",
@@ -149,7 +150,7 @@ export const getProfile = internalAction({
 
       if (args.includeExtendedBio && args.username) {
         try {
-          const extendedBioUrl = `https://api.socialapi.me/twitter/user/${args.username}/extended-bio`;
+          const extendedBioUrl = `${SOCIAL_API_BASE}/twitter/user/${args.username}/extended-bio`;
           const extendedBioResponse = await fetchSocialApi(
             ctx,
             "twitter.getProfile.extendedBio",
