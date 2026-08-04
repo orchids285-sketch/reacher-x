@@ -36,19 +36,13 @@ const FOOTER_COLUMNS = [
   {
     title: "Product",
     links: [
-      { label: "Use cases", href: "/use-cases" },
-      { label: "Pricing", href: "/pricing" },
-      {
-        label: "Changelog",
-        href: "https://github.com/VecterAI/reacher-x/releases/",
-      },
+      { label: "Threads", href: "/threads" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Threads", href: "/threads" },
-      { label: "Contact", href: "mailto:creativecoder.crco@gmail.com" },
+      { label: "Support", href: "mailto:support@foundreach.com" },
     ],
   },
   {
@@ -57,12 +51,12 @@ const FOOTER_COLUMNS = [
       { label: "GitHub", href: GITHUB_REPO_URL },
       {
         label: "Documentation",
-        href: "https://github.com/VecterAI/reacher-x/blob/main/README.md",
+        href: `${GITHUB_REPO_URL}/blob/main/README.md`,
       },
       { label: "Contribute", href: GITHUB_REPO_ISSUES_URL },
       {
         label: "License (Apache-2.0)",
-        href: "https://github.com/VecterAI/reacher-x/blob/main/LICENSE",
+        href: `${GITHUB_REPO_URL}/blob/main/LICENSE`,
       },
     ],
   },
@@ -169,14 +163,6 @@ export function FooterClient({
       <div className="mx-auto flex w-full max-w-[1288px] flex-col gap-8 px-4 pt-8 pb-8 md:gap-12 md:pt-12 md:pb-12">
         <div className="flex flex-col gap-1">
           <LandingWordmark className="w-fit" />
-          <address className="not-italic">
-            <a
-              href="mailto:creativecoder.crco@gmail.com"
-              className="text-muted-foreground font-mono text-sm font-medium hover:underline"
-            >
-              creativecoder.crco@gmail.com
-            </a>
-          </address>
         </div>
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

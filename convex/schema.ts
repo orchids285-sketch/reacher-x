@@ -1337,7 +1337,7 @@ export default defineSchema({
     updatedAt: v.number(),
   }).index("by_provider", ["provider"]),
 
-  /** One row per ReacherX-initiated provider request for cost and failures. */
+  /** One row per FoundReach-initiated provider request for cost and failures. */
   providerRequestEvents: defineTable({
     provider: providerNameValidator,
     outcome: providerRequestOutcomeValidator,

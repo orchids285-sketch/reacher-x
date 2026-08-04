@@ -29,7 +29,12 @@ export const sendWelcomeEmail = action({
       const html = await render(WaitlistConfirmationEmail());
 
       await resend.emails.send({
-        from: "ReacherX <noreply@transactional.reacherx.com>",
+        // This lands in the customer's inbox, which made it the most visible mark of
+        // the lot -- every message was signed with the upstream product's name, from a
+        // domain this deployment does not own and therefore cannot send from at all.
+        from:
+          process.env.TRANSACTIONAL_FROM_EMAIL ||
+          "FoundReach <noreply@foundreach.com>",
         to: email,
         subject: "You're on the wait-list!",
         html: html,

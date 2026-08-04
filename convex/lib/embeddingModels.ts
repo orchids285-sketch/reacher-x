@@ -27,8 +27,8 @@ export function getTextEmbeddingModel(): EmbeddingModel {
     return createOpenRouter({
       apiKey: openRouterApiKey,
       headers: {
-        "HTTP-Referer": "https://reacherx.com",
-        "X-Title": "ReacherX",
+        "HTTP-Referer": "https://foundreach.com",
+        "X-Title": "FoundReach",
       },
     }).embeddingModel(configuredModel);
   }

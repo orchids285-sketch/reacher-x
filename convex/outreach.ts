@@ -1723,7 +1723,7 @@ export const resumePlan = mutation({
       .first();
     if (waitingManualTask) {
       throw new Error(
-        "This plan is waiting for a manual X reply that ReacherX is monitoring automatically"
+        "This plan is waiting for a manual X reply that FoundReach is monitoring automatically"
       );
     }
     const waitingConnectionTask = await ctx.db
@@ -1734,7 +1734,7 @@ export const resumePlan = mutation({
       .first();
     if (waitingConnectionTask) {
       throw new Error(
-        "This plan is waiting for a LinkedIn connection; ReacherX will resume it automatically"
+        "This plan is waiting for a LinkedIn connection; FoundReach will resume it automatically"
       );
     }
 
@@ -1911,7 +1911,7 @@ export const setPlanLifecycleInternal = internalMutation({
         .first();
       if (waitingManualTask) {
         throw new Error(
-          "This plan is waiting for a manual X reply that ReacherX is monitoring automatically"
+          "This plan is waiting for a manual X reply that FoundReach is monitoring automatically"
         );
       }
       const waitingConnectionTask = await ctx.db
@@ -1922,7 +1922,7 @@ export const setPlanLifecycleInternal = internalMutation({
         .first();
       if (waitingConnectionTask) {
         throw new Error(
-          "This plan is waiting for a LinkedIn connection; ReacherX will resume it automatically"
+          "This plan is waiting for a LinkedIn connection; FoundReach will resume it automatically"
         );
       }
       await ctx.db.patch(planId, {

@@ -67,8 +67,8 @@ export function createAIProvider() {
     // App attribution for OpenRouter analytics
     // https://openrouter.ai/docs/app-attribution
     headers: {
-      "HTTP-Referer": "https://reacherx.com",
-      "X-Title": "ReacherX",
+      "HTTP-Referer": "https://foundreach.com",
+      "X-Title": "FoundReach",
     },
   });
 }

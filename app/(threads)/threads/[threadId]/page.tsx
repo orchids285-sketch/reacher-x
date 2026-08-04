@@ -42,7 +42,7 @@ export async function generateMetadata({
       title,
       description,
       images: [ogImage],
-      url: `https://reacherx.com/threads/${threadId}`,
+      url: `https://foundreach.com/threads/${threadId}`,
       type: "article",
     },
     twitter: {

@@ -39,15 +39,12 @@ import {
   ChangeHistoryIcon,
   CheckIcon,
   ContrastIcon,
-  CreditCardIcon,
   DarkModeIcon,
-  DataUsageIcon,
   FolderCopyIcon,
   FolderIcon,
   FramePersonIcon,
   HomeIcon,
   LightModeIcon,
-  LogoutIcon,
   MailIcon,
   ManageAccountsIcon,
   LockIcon,
@@ -729,44 +726,10 @@ export function Header({
                   <DropdownMenuLabel className="text-muted-foreground text-xs font-normal">
                     Accounts
                   </DropdownMenuLabel>
-                  <DropdownMenuItem disabled={locked} asChild={!locked}>
-                    {locked ? (
-                      <>
-                        <CreditCardIcon
-                          className="fill-current"
-                          aria-hidden="true"
-                        />
-                        Plans
-                      </>
-                    ) : (
-                      <Link href="/plans">
-                        <CreditCardIcon
-                          className="fill-current"
-                          aria-hidden="true"
-                        />
-                        Plans
-                      </Link>
-                    )}
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled={locked} asChild={!locked}>
-                    {locked ? (
-                      <>
-                        <DataUsageIcon
-                          className="fill-current"
-                          aria-hidden="true"
-                        />
-                        Usage
-                      </>
-                    ) : (
-                      <Link href="/usage">
-                        <DataUsageIcon
-                          className="fill-current"
-                          aria-hidden="true"
-                        />
-                        Usage
-                      </Link>
-                    )}
-                  </DropdownMenuItem>
+                  {/* No Plans and no Usage. Both opened a subscription of this tool's own
+                      inside a product the customer already pays for once, which is the
+                      second-bill problem rather than a missing feature. Connected accounts
+                      stays: it connects X and LinkedIn, and has nothing to do with money. */}
                   <DropdownMenuItem disabled={locked} asChild={!locked}>
                     {locked ? (
                       <>
@@ -971,7 +934,7 @@ export function Header({
 
                 {/* Reach out/feedback */}
                 <DropdownMenuItem asChild>
-                  <a href="mailto:creativecoder.crco@gmail.com">
+                  <a href="mailto:support@foundreach.com">
                     <MailIcon className="fill-current" aria-hidden="true" />
                     Reach out/feedback
                   </a>
@@ -979,7 +942,7 @@ export function Header({
 
                 {/* Home page */}
                 <DropdownMenuItem asChild>
-                  <Link href="/home">
+                  <Link href="/">
                     <HomeIcon className="fill-current" aria-hidden="true" />
                     Home page
                   </Link>

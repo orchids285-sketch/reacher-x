@@ -89,7 +89,7 @@ async function resumeDmAfterLinkedInConnection(
     type: "outreach_sent",
     notificationKey: `linkedin-connection-resumed:${task._id}`,
     title: "LinkedIn connection accepted",
-    message: "ReacherX is sending the approved DM automatically.",
+    message: "FoundReach is sending the approved DM automatically.",
     prospectId: plan.prospectId,
     planId: plan._id,
     taskId: task._id,
@@ -371,7 +371,7 @@ export const startLinkedInConnectionThenDmRecovery = internalMutation({
       notificationKey: `linkedin-connect-first:${task._id}`,
       title: "Connection request sent on LinkedIn",
       message:
-        "The DM required a connection. ReacherX sent the request and will send the approved DM automatically after acceptance.",
+        "The DM required a connection. FoundReach sent the request and will send the approved DM automatically after acceptance.",
       prospectId: plan.prospectId,
       planId: plan._id,
       taskId: task._id,
@@ -473,7 +473,7 @@ export const startTwitterManualReplyRecovery = internalMutation({
       type: "ask_human",
       notificationKey: `manual-x-reply:${task._id}`,
       title: "Post this reply manually on X",
-      message: `X blocked automatic posting. Open the post and publish the prepared reply: ${postUrl}\n\nReacherX is watching automatically and will continue the plan when your reply appears.`,
+      message: `X blocked automatic posting. Open the post and publish the prepared reply: ${postUrl}\n\nFoundReach is watching automatically and will continue the plan when your reply appears.`,
       prospectId: plan.prospectId,
       planId: plan._id,
       taskId: task._id,
@@ -610,7 +610,7 @@ export const recordRecoveryCheck = internalMutation({
           notificationKey: `manual-x-reply-expired:${monitor.taskId}`,
           title: "Manual X reply was not detected",
           message:
-            "ReacherX could not verify a new direct reply on the selected X post. The outreach plan remains paused so it will not send a duplicate.",
+            "FoundReach could not verify a new direct reply on the selected X post. The outreach plan remains paused so it will not send a duplicate.",
           prospectId: monitor.prospectId,
           planId: monitor.planId,
           taskId: monitor.taskId,
@@ -630,7 +630,7 @@ export const recordRecoveryCheck = internalMutation({
           notificationKey: `linkedin-comment-monitor-expired:${monitor._id}`,
           title: "LinkedIn comment monitoring could not start",
           message:
-            "The comment was posted, but ReacherX could not resolve its LinkedIn comment ID, so replies to it cannot be monitored automatically.",
+            "The comment was posted, but FoundReach could not resolve its LinkedIn comment ID, so replies to it cannot be monitored automatically.",
           prospectId: monitor.prospectId,
           planId: monitor.planId,
           contextPlatform: "linkedin",
@@ -660,7 +660,7 @@ export const recordRecoveryCheck = internalMutation({
           notificationKey: `linkedin-connection-expired:${monitor.taskId}`,
           title: "LinkedIn connection was not accepted",
           message:
-            "The approved DM was not sent. ReacherX stopped waiting after 30 days so this outreach will not remain stuck silently.",
+            "The approved DM was not sent. FoundReach stopped waiting after 30 days so this outreach will not remain stuck silently.",
           prospectId: monitor.prospectId,
           planId: monitor.planId,
           taskId: monitor.taskId,
@@ -758,7 +758,7 @@ export const confirmTwitterManualReply = internalMutation({
       notificationKey: `manual-x-reply-detected:${task._id}`,
       title: "Manual X reply detected",
       message:
-        "Your reply was linked to this outreach plan. ReacherX is now monitoring the conversation for a response.",
+        "Your reply was linked to this outreach plan. FoundReach is now monitoring the conversation for a response.",
       prospectId: monitor.prospectId,
       planId: plan._id,
       taskId: task._id,

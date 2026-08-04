@@ -133,8 +133,8 @@ function getOpenRouterProvider() {
   return createOpenRouter({
     apiKey,
     headers: {
-      "HTTP-Referer": "https://reacherx.com",
-      "X-Title": "ReacherX",
+      "HTTP-Referer": "https://foundreach.com",
+      "X-Title": "FoundReach",
     },
   });
 }
@@ -243,7 +243,7 @@ export async function classifyOutreachTurn(args: {
   const result = await generateText({
     model: outreachRouterLanguageModel,
     system:
-      "You are ReacherX's internal semantic model router. Classify the required reasoning depth for one prospect-agent turn. Return only one valid JSON object with the exact keys lane, confidence, reason, and rationale; keep rationale under 12 words and never answer the user's request.",
+      "You are FoundReach's internal semantic model router. Classify the required reasoning depth for one prospect-agent turn. Return only one valid JSON object with the exact keys lane, confidence, reason, and rationale; keep rationale under 12 words and never answer the user's request.",
     prompt: `${buildOutreachRouterPrompt(args)}\n\nReturn only the JSON object. Use one of the provided reason codes exactly.`,
     temperature: 0,
     maxOutputTokens: OUTREACH_ROUTER_MAX_OUTPUT_TOKENS,

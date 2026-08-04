@@ -37,8 +37,6 @@ import {
   AccountBoxIcon,
   ArchiveIcon,
   BidLandscapeIcon,
-  CreditCardIcon,
-  DataUsageIcon,
 } from "@/shared/ui/components/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -211,46 +209,8 @@ export function SidebarNavigation() {
         <SidebarGroupLabel>Accounts</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip="Plans"
-                isActive={pathname === "/plans"}
-                disabled={locked}
-                asChild={!locked}
-              >
-                {locked ? (
-                  <>
-                    <CreditCardIcon className="fill-sidebar-foreground" />
-                    <span className="truncate">Plans</span>
-                  </>
-                ) : (
-                  <Link href="/plans">
-                    <CreditCardIcon className="fill-sidebar-foreground" />
-                    <span className="truncate">Plans</span>
-                  </Link>
-                )}
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip="Usage"
-                isActive={pathname === "/usage"}
-                disabled={locked}
-                asChild={!locked}
-              >
-                {locked ? (
-                  <>
-                    <DataUsageIcon className="fill-sidebar-foreground" />
-                    <span className="truncate">Usage</span>
-                  </>
-                ) : (
-                  <Link href="/usage">
-                    <DataUsageIcon className="fill-sidebar-foreground" />
-                    <span className="truncate">Usage</span>
-                  </Link>
-                )}
-              </SidebarMenuButton>
-            </SidebarMenuItem>
+            {/* Plans and Usage removed: the host bills for this tool, and with the
+                routes gone these were two permanent sidebar entries leading to 404. */}
             {/* Settings with sub-menu */}
             <SidebarMenuItem>
               <Collapsible

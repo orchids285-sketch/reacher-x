@@ -17,7 +17,12 @@ export const migrations = new Migrations<DataModel, typeof schema>(
   { schema }
 );
 
-const IDENTITY_REPAIR_OWNER_EMAIL = "creativecoder.crco@gmail.com";
+// Was the upstream author's personal address. It gates a repair migration to a single
+// operator, so baked in as it was, the migration could never run here -- nobody in this
+// deployment has that mailbox -- while still shipping a stranger's address in our source.
+const IDENTITY_REPAIR_OWNER_EMAIL = (
+  process.env.IDENTITY_REPAIR_OWNER_EMAIL || "ops@foundreach.com"
+).toLowerCase();
 const MAX_SAFE_PROSPECT_DOCUMENT_BYTES = 1_000_000;
 const AGENTMAIL_WORKSPACE_ID =
   "ks76np202xg61bj94838cpszyn8arxc6" as Id<"workspaces">;
@@ -25,7 +30,7 @@ const REACHERX_WORKSPACE_ID =
   "ks76wdkah15gxj05hatyk5hxjx88y6dj" as Id<"workspaces">;
 const IDENTITY_REPAIR_ACTIVE_WORKSPACES: Readonly<Record<string, string>> = {
   [AGENTMAIL_WORKSPACE_ID]: "AgentMail (lead gen)",
-  [REACHERX_WORKSPACE_ID]: "ReacherX (lead gen)",
+  [REACHERX_WORKSPACE_ID]: "FoundReach (lead gen)",
 };
 
 /**
@@ -129,7 +134,7 @@ function defineQualifiedProspectDisplayNameBackfill(
 export const backfillAgentMailQualifiedProspectDisplayNames =
   defineQualifiedProspectDisplayNameBackfill(AGENTMAIL_WORKSPACE_ID);
 
-export const backfillReacherXQualifiedProspectDisplayNames =
+export const backfillFoundReachQualifiedProspectDisplayNames =
   defineQualifiedProspectDisplayNameBackfill(REACHERX_WORKSPACE_ID);
 
 export const repairOutreachNotificationProspectIdentity = migrations.define({

@@ -416,7 +416,7 @@ export const getInlineSuggestion = action({
     const prospectContext = buildProspectContext(prospect);
     const budgetContext = buildBudgetContext(args);
 
-    const systemPrompt = `You generate inline autocomplete continuations for ReacherX.
+    const systemPrompt = `You generate inline autocomplete continuations for FoundReach.
 
 Return ONLY JSON in this exact shape: {"completion":"text to insert"}.
 

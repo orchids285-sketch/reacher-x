@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { api } from "@/convex/_generated/api";
-import { getPlansUpgradeHref } from "@/features/billing/lib/plansUpgradeUrl";
 import {
   useActiveUseCaseLabels,
   usePreferredShellQueryArgs,
@@ -15,7 +13,6 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@/shared/ui/components/Alert";
-import { Button } from "@/shared/ui/components/Button";
 
 interface WorkspacePlanLimitAlertProps {
   className?: string;
@@ -44,42 +41,27 @@ export function WorkspacePlanLimitAlert({
   const entityPluralLower = entityPlural.toLowerCase();
   const discoveryVerb = getWorkspaceDiscoveryVerb(activeUseCaseKey);
 
+  // The upgrade wall is gone entirely.
+  //
+  // It was the worst of the billing surfaces because it did not merely offer a second
+  // subscription -- it withheld the tool until one was bought, from a customer who has
+  // already paid for access once. Entitlement is the host's decision, and this component
+  // has no way to see it, so "free tier" here means "the host granted access", not "not
+  // paying".
   if (requiresPlan) {
-    return (
-      <Alert className={cn("w-auto", className)}>
-        <AlertTitle>Upgrade plan</AlertTitle>
-        <AlertDescription className="space-y-3">
-          <p>
-            {`Choose a plan to keep Agent running for this workspace. Your existing ${entityPluralLower}, settings, and history stay available.`}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Button asChild size="xs">
-              <Link href={getPlansUpgradeHref()}>Upgrade plan</Link>
-            </Button>
-            <Button asChild size="xs" variant="outline">
-              <Link href="/plans">View plans</Link>
-            </Button>
-          </div>
-        </AlertDescription>
-      </Alert>
-    );
+    return null;
   }
 
+  // The limit notice stays, without the upsell. That the agent has stopped is something
+  // the user needs to know -- an agent that silently stops looks broken -- but why it
+  // stopped is answered by the cycle, not by a price list.
   return (
     <Alert className={cn("w-auto", className)}>
       <AlertTitle>{`${entityPlural} limit reached`}</AlertTitle>
-      <AlertDescription className="space-y-3">
+      <AlertDescription>
         <p>
-          {`This workspace reached its qualified ${entityPluralLower} limit for the current billing cycle. The agent has paused ${discoveryVerb} new ${entityPluralLower} until the cycle resets or you upgrade.`}
+          {`This workspace reached its qualified ${entityPluralLower} limit for the current cycle. The agent has paused ${discoveryVerb} new ${entityPluralLower} until the cycle resets.`}
         </p>
-        <div className="flex flex-wrap gap-2">
-          <Button asChild size="xs">
-            <Link href={getPlansUpgradeHref()}>Upgrade plan</Link>
-          </Button>
-          <Button asChild size="xs" variant="outline">
-            <Link href="/usage">View usage</Link>
-          </Button>
-        </div>
       </AlertDescription>
     </Alert>
   );

@@ -5,19 +5,29 @@
 import { MutationCtx, QueryCtx } from "../_generated/server";
 import { Id } from "../_generated/dataModel";
 import { getCurrentUTCTimestamp } from "../../shared/lib/utils/time/timeUtils";
-import { PLAN_LIMITS, type PlanTier, type UserPlan } from "./planConstants";
+import {
+  GRANTED_PLAN_TIER,
+  PLAN_LIMITS,
+  type PlanTier,
+  type UserPlan,
+} from "./planConstants";
 
 function normalizePlanLimits<T extends UserPlan>(plan: T): T {
-  const limits = PLAN_LIMITS[plan.tier];
+  // A row written before the host took over entitlement still says "free". Raising it
+  // here rather than only at insert time is the difference between everyone being
+  // entitled and only users who never opened the tool before being entitled.
+  const tier = plan.tier === "free" ? GRANTED_PLAN_TIER : plan.tier;
+  const limits = PLAN_LIMITS[tier];
   return {
     ...plan,
+    tier,
     prospectsLimit: limits.prospectsLimit,
     workspacesLimit: limits.workspacesLimit,
   };
 }
 
 /**
- * Get or create a user's plan (defaults to free tier)
+ * Get or create a user's plan (defaults to the tier this deployment grants)
  * Always returns a valid plan object (never null)
  */
 export async function getOrCreateUserPlan(
@@ -52,9 +62,9 @@ export async function getOrCreateUserPlan(
     const now = getCurrentUTCTimestamp();
     const planId = await mutationCtx.db.insert("userPlans", {
       userId,
-      tier: "free",
-      prospectsLimit: PLAN_LIMITS.free.prospectsLimit,
-      workspacesLimit: PLAN_LIMITS.free.workspacesLimit,
+      tier: GRANTED_PLAN_TIER,
+      prospectsLimit: PLAN_LIMITS[GRANTED_PLAN_TIER].prospectsLimit,
+      workspacesLimit: PLAN_LIMITS[GRANTED_PLAN_TIER].workspacesLimit,
       currentProspectsCount: 0,
       currentProspectsCycleStart: undefined,
       currentProspectsCycleEnd: undefined,
@@ -72,9 +82,9 @@ export async function getOrCreateUserPlan(
     _id: null,
     _creationTime: now,
     userId,
-    tier: "free" as const,
-    prospectsLimit: PLAN_LIMITS.free.prospectsLimit,
-    workspacesLimit: PLAN_LIMITS.free.workspacesLimit,
+    tier: GRANTED_PLAN_TIER,
+    prospectsLimit: PLAN_LIMITS[GRANTED_PLAN_TIER].prospectsLimit,
+    workspacesLimit: PLAN_LIMITS[GRANTED_PLAN_TIER].workspacesLimit,
     currentProspectsCount: 0,
     currentProspectsCycleStart: undefined,
     currentProspectsCycleEnd: undefined,

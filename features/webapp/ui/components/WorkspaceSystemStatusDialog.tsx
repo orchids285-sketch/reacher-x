@@ -254,9 +254,8 @@ export function WorkspaceSystemStatusDialog({
       return;
     }
 
-    if (status.actionKind === "view_plans") {
-      router.push("/plans");
-    }
+    // "view_plans" used to send the user to a price list. Entitlement belongs to the
+    // host, so there is nothing here for them to buy and nowhere to send them.
   }, [resetAndClose, router, startProspectingWorkflow, status]);
 
   const handlePauseRequest = useCallback(() => {

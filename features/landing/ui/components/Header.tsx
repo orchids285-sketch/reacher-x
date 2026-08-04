@@ -52,7 +52,6 @@ import {
   LightModeIcon,
   DarkModeIcon,
   ContrastIcon,
-  LogoutIcon,
   ArrowOutwardIcon,
   TwitterIcon,
   DiscordIcon,
@@ -66,14 +65,11 @@ import {
   BidLandscapeIcon,
   ChangeHistoryIcon,
   CheckIcon,
-  CreditCardIcon,
-  DataUsageIcon,
   FolderCopyIcon,
   FolderIcon,
   FramePersonIcon,
   LockIcon,
   ManageAccountsIcon,
-  MailIcon,
   UpgradeIcon,
 } from "@/shared/ui/components/icons";
 
@@ -93,11 +89,6 @@ import {
 } from "@/shared/lib/workspaceUseCases";
 import { getWorkspaceRoutes } from "@/shared/lib/workspaceRoutes";
 import { buildSetupHref } from "@/shared/lib/urls/setupHref";
-import {
-  LOGIN_HREF,
-  SETUP_SIGN_UP_HREF,
-} from "@/shared/lib/urls/authRoutes";
-import { LandingAuthLink } from "./LandingAuthLink";
 
 /* -------------------------------------------------------------------------- */
 /*  Helpers                                                                   */
@@ -112,15 +103,11 @@ function getInitials(name?: string) {
     .toUpperCase();
 }
 
+// Use cases and Pricing pointed at marketing routes this fork no longer serves, and
+// Contact opened a mail window addressed to the upstream author's personal account --
+// a real person who would have received our users' support mail.
 const NAV_LINKS = [
-  { href: "/use-cases", label: "Use cases", isAnchor: false },
   { href: "/threads", label: "Threads", isAnchor: false },
-  {
-    href: "mailto:creativecoder.crco@gmail.com",
-    label: "Contact",
-    isAnchor: true,
-  },
-  { href: "/pricing", label: "Pricing", isAnchor: false },
 ] as const;
 
 function isLinkActive(href: string, pathname: string): boolean {
@@ -539,32 +526,10 @@ function AvatarDropdown({
             <DropdownMenuLabel className="text-muted-foreground text-xs font-normal">
               Accounts
             </DropdownMenuLabel>
-            <DropdownMenuItem disabled={locked} asChild={!locked}>
-              {locked ? (
-                <>
-                  <CreditCardIcon className="fill-current" aria-hidden="true" />
-                  Plans
-                </>
-              ) : (
-                <Link href="/plans">
-                  <CreditCardIcon className="fill-current" aria-hidden="true" />
-                  Plans
-                </Link>
-              )}
-            </DropdownMenuItem>
-            <DropdownMenuItem disabled={locked} asChild={!locked}>
-              {locked ? (
-                <>
-                  <DataUsageIcon className="fill-current" aria-hidden="true" />
-                  Usage
-                </>
-              ) : (
-                <Link href="/usage">
-                  <DataUsageIcon className="fill-current" aria-hidden="true" />
-                  Usage
-                </Link>
-              )}
-            </DropdownMenuItem>
+            {/* Plans and Usage removed here for the same reason as in the app header:
+                they sell a second subscription of this tool to somebody who is already
+                paying the host for it. Unlike the upgrade prompts nearby, these two were
+                unconditional, so granting the tier would not have hidden them. */}
             <DropdownMenuItem disabled={locked} asChild={!locked}>
               {locked ? (
                 <>
@@ -729,14 +694,6 @@ function AvatarDropdown({
             <span className="ml-auto">{themeToggle}</span>
           </DropdownMenuItem>
 
-          {/* Reach out/feedback */}
-          <DropdownMenuItem asChild>
-            <a href="mailto:creativecoder.crco@gmail.com">
-              <MailIcon className="fill-current" aria-hidden="true" />
-              Reach out/feedback
-            </a>
-          </DropdownMenuItem>
-
           {/* Dashboard (contextual — this is "Home page" in the app header) */}
           <DropdownMenuItem asChild>
             <Link href="/">
@@ -823,18 +780,8 @@ export function Header({ githubStarsCount }: { githubStarsCount: number }) {
               <AvatarDropdown user={user} />
             ) : (
               <>
-                <LandingAuthLink
-                  href={LOGIN_HREF}
-                  className={buttonVariants({ variant: "ghost", size: "xs" })}
-                >
-                  Log in
-                </LandingAuthLink>
-                <LandingAuthLink
-                  href={SETUP_SIGN_UP_HREF}
-                  className={buttonVariants({ variant: "default", size: "xs" })}
-                >
-                  Sign up
-                </LandingAuthLink>
+              {/* No log in or sign up. The session comes from the host, so these
+                  would offer an account the user cannot make and does not need. */}
               </>
             )}
           </div>
@@ -870,32 +817,9 @@ export function Header({ githubStarsCount }: { githubStarsCount: number }) {
               </DrawerHeader>
 
               <menu className="flex flex-col items-start px-4 pb-4">
-                {/* Unauthenticated: auth actions above nav */}
-                {!loading && !user && (
-                  <>
-                    <li>
-                      <DrawerClose asChild>
-                        <LandingAuthLink
-                          href={LOGIN_HREF}
-                          className="text-foreground py-2 text-xl font-normal hover:underline"
-                        >
-                          Log in
-                        </LandingAuthLink>
-                      </DrawerClose>
-                    </li>
-                    <li>
-                      <DrawerClose asChild>
-                        <LandingAuthLink
-                          href={SETUP_SIGN_UP_HREF}
-                          className="text-foreground py-2 text-xl font-normal hover:underline"
-                        >
-                          Sign up
-                        </LandingAuthLink>
-                      </DrawerClose>
-                    </li>
-                    <Separator className="my-4" />
-                  </>
-                )}
+                {/* No auth actions in the drawer either: the desktop header lost them
+                    for the same reason, and a control that only appears on a phone is the
+                    kind that survives a cleanup unnoticed. */}
 
                 {NAV_LINKS.map(({ href, label, isAnchor }) => {
                   const active = isLinkActive(href, pathname);

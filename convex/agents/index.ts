@@ -83,8 +83,8 @@ function getOpenRouterProvider() {
   return createOpenRouter({
     apiKey,
     headers: {
-      "HTTP-Referer": "https://reacherx.com",
-      "X-Title": "ReacherX",
+      "HTTP-Referer": "https://foundreach.com",
+      "X-Title": "FoundReach",
     },
   });
 }

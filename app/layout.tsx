@@ -102,8 +102,11 @@ export default function RootLayout({
         <PostHogProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            /* Forced: this runs inside a dark product, and letting a light operating
+               system repaint half of it is not a preference worth honouring. */
+            defaultTheme="dark"
+            forcedTheme="dark"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <NuqsAdapter>

@@ -211,7 +211,7 @@ export const GET = withEvlog(async (request: NextRequest) => {
       timeout: 10000, // 10 seconds timeout
       retries: 3,
       retryDelay: 1000,
-      userAgent: "DiscoveryBot/1.0 (+https://reacherx.com)",
+      userAgent: "DiscoveryBot/1.0 (+https://foundreach.com)",
       cache: true,
     });
 

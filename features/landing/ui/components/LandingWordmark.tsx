@@ -6,7 +6,7 @@ import { cn } from "@/shared/lib/utils";
 export function LandingWordmark({ className }: { className?: string }) {
   return (
     <Link
-      href="/home"
+      href="/"
       aria-label="Discovery Home"
       className={cn(
         "inline-flex items-center gap-2 whitespace-nowrap",

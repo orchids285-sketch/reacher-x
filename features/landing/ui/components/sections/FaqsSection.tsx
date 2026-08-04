@@ -44,10 +44,10 @@ export function FaqsSection({
         <p className="text-muted-foreground mt-6 text-center text-sm md:text-base">
           {contactLabel}{" "}
           <Link
-            href="mailto:creativecoder.crco@gmail.com"
+            href="mailto:support@foundreach.com"
             className="text-foreground underline-offset-4 hover:underline"
           >
-            creativecoder.crco@gmail.com
+            support@foundreach.com
           </Link>
         </p>
       </div>

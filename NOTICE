@@ -1,0 +1,33 @@
+Reach X
+Copyright 2026 FoundReach
+
+This product includes software developed by VecterAI as Reacher X
+(https://github.com/VecterAI/reacher-x), licensed under the Apache License,
+Version 2.0. A copy of that licence is in the LICENSE file alongside this
+notice.
+
+This distribution is a modified fork. Changes from upstream include:
+
+  * the marketing surfaces (landing page, pricing and use-cases routes) were
+    removed, because this build ships embedded inside another product rather
+    than as a site of its own;
+  * the plan tiers no longer gate the product. Entitlement is decided by the
+    host application before this tool loads, so the in-app upgrade prompts,
+    plans and usage screens were removed and every account is granted the
+    highest tier;
+  * sign-in, sign-up and sign-out surfaces were removed. The session is
+    established by the host;
+  * upstream's contact address, domain and repository links were replaced with
+    this distribution's own, so that support requests and source links reach
+    the people running this build rather than the original author.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.

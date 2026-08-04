@@ -19,7 +19,7 @@ import { getCurrentUTCTimestamp } from "../../shared/lib/utils/time/timeUtils";
 type MemoryDbReader = GenericDatabaseReader<any>;
 type MemoryDbWriter = GenericDatabaseWriter<any>;
 
-export const AGENT_MEMORY_MARKER = "[ReacherX Memory]";
+export const AGENT_MEMORY_MARKER = "[FoundReach Memory]";
 const MEMORY_META_PREFIX = "meta: ";
 const SECTION_LABELS = [
   "Signals:",

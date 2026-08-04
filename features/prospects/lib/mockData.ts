@@ -24,12 +24,12 @@ export const MOCK_PROSPECTS: Doc<"prospects">[] = [
     displayName: "Muhammad Salman Farooq",
     title: "Solo SaaS founder",
     briefIntro:
-      "Building in public. Focused on developer tools and AI-powered productivity apps. Previously at FAANG. Check out https://reacherx.com 🚀",
+      "Building in public. Focused on developer tools and AI-powered productivity apps. Previously at FAANG. Check out https://example.com 🚀",
     prospectType: "individual",
     qualificationScore: 95,
     qualificationStatus: "qualified",
     company: "Discovery",
-    websiteUrl: "https://reacherx.com",
+    websiteUrl: "https://example.com",
     location: "SF, California, USA",
     pipelineStage: "contacted",
     finance: {

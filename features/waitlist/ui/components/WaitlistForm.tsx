@@ -74,7 +74,7 @@ export function WaitlistForm({
                         id="email"
                         type="email"
                         required
-                        placeholder="e.g., reacherxfounder@example.com"
+                        placeholder="e.g., founder@example.com"
                         aria-required="true"
                         aria-invalid={!!form.formState.errors.email}
                         {...field}

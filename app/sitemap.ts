@@ -3,7 +3,9 @@ import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://reacherx.com";
+// Overridable, because a sitemap hard-coded to somebody else's domain advertises their
+// site rather than this deployment.
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://foundreach.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseEntries: MetadataRoute.Sitemap = [
@@ -12,24 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
-    },
-    {
-      url: `${BASE_URL}/home`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/use-cases`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: `${BASE_URL}/threads`,

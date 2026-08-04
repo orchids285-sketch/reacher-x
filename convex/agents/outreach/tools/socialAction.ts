@@ -149,7 +149,7 @@ const socialActionArgsSchema = z.object({
 
 export const socialAction = createTool({
   description:
-    "Execute or stage a curated social action using ReacherX policy controls. Use this for X/Twitter likes, bookmarks, reposts, follows, replies, posts, and DMs, plus LinkedIn messages, invitations, reactions, and comments. Low-risk actions may execute immediately. Medium and high-risk actions create a durable approval request instead of executing directly.",
+    "Execute or stage a curated social action using FoundReach policy controls. Use this for X/Twitter likes, bookmarks, reposts, follows, replies, posts, and DMs, plus LinkedIn messages, invitations, reactions, and comments. Low-risk actions may execute immediately. Medium and high-risk actions create a durable approval request instead of executing directly.",
   inputSchema: socialActionArgsSchema,
   execute: async (ctx, args): Promise<SocialActionToolResult> => {
     if (!ctx.threadId) {

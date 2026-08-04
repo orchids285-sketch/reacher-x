@@ -52,7 +52,9 @@ import { logger } from "@/shared/lib/logger";
 import { SidebarHeaderSkeleton } from "./SidebarHeaderSkeleton";
 
 const HIGHEST_TIER = "pro";
-const CUSTOM_LIMIT_EMAIL = "creativecoder.crco@gmail.com";
+// Ours. It was the upstream author's personal address, which meant a customer asking us
+// for a higher limit was mailing a stranger.
+const CUSTOM_LIMIT_EMAIL = "support@foundreach.com";
 const NO_WORKSPACE_SELECT_VALUE = "__no_workspace__";
 const sidebarHeaderLogger = logger.withScope("SidebarHeader");
 
