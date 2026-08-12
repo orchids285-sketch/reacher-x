@@ -5,3 +5,11 @@ allowBuilds:
   unrs-resolver: true
 patchedDependencies:
   next-themes@0.4.6: patches/next-themes@0.4.6.patch
+
+# Failles HAUTES en dependances transitives : aucun paquet direct ne les declare,
+# donc une montee de version ordinaire ne les atteint pas. Epinglees ici, ce qui
+# n'affecte pas les versions des dependances directes.
+overrides:
+  brace-expansion: ^5.0.9
+  picomatch: ^4.0.5
+  undici: ^8.10.0
