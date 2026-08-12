@@ -2,6 +2,12 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // The image this service ran before was a standalone build (its entrypoint was
+  // `node server.js`). Rebuilding it as a plain `next start` app changed how the
+  // server initialises and every request started answering 500 on a WorkOS
+  // client that never gets credentials here. Restoring standalone restores the
+  // runtime the service was configured for.
+  output: "standalone",
   // Next.js 16: Enable Cache Components (PPR + "use cache" directive)
   cacheComponents: true,
 

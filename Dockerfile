@@ -12,4 +12,8 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm build || (echo "build failed" && exit 1)
 ENV PORT=3000
 EXPOSE 3000
-CMD ["pnpm","start"]
+# A standalone build lands in .next/standalone and needs its static assets
+# beside it. Assembling them at /app makes `node server.js` work, which is the
+# entrypoint this service is configured with.
+RUN cp -r .next/standalone/. ./  && mkdir -p .next/static  && cp -r .next/static .next/standalone/.next/static 2>/dev/null || true  && cp -r public ./public 2>/dev/null || true
+CMD ["node","server.js"]
